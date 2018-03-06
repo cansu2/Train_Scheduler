@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Train Scheduler</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Owl Carousel -->
+	<link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
+	<link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
+
+	<!-- Magnific Popup -->
+	<link type="text/css" rel="stylesheet" href="css/magnific-popup.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.16/datatables.min.css"/>
+
+
+	<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!-- [if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif] -->
+</head>
+
+<body background = "./img/railway.jpg">
+
+	<!-- Header -->
+	<header>
+
+		<!-- header wrapper -->
+		<div class="header-wrapper sm-padding bg-grey">
+			<div class="container">
+				<h2>Train Scheduler</h2>
+				<ul class="breadcrumb">
+					<a id="time">Time</a>
+				</ul>
+			</div>
+		</div>
+		<!-- /header wrapper -->
+
+	</header>
+	<!-- /Header -->
+
+	<!-- Blog -->
+	<div id="blog" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Main -->
+				<main id="main" class="col-md-9">
+					<div class="blog">
+					
+
+						<!-- blog author -->
+						<div class="blog-author">
+							<div class="media">
+								<div class="media-left">
+								</div>
+								<div class="media-body" id="users">
+									<div class="media-heading">
+								
+											<h3>regular Train Schedule    <a href="./form.html"><i class="fa fa-plus" id="plus" title="Add a New Train"></i></a></h3>
+								
+								</div>
+								
+									<table class="table" id="train-data">
+											<thead class="table-active">
+											  <tr>
+												<th>Train Name</th>
+												<th>Destination</th>
+												<th>Frequency</th>
+												<th>Next Arrival</th>
+												<th>Minutes Away</th>
+											  </tr>
+											</thead>
+											<tbody id="table-body" class="list">
+								  
+											</tbody>
+										  </table>	
+									
+									</div>
+
+							</div> 
+
+					</div>
+				</main>
+				<!-- /Main -->
+
+
+				<!-- Aside -->
+				
+				<aside id="aside" class="col-md-3">
+
+					<!-- Search -->
+					<div class="widget">
+
+						<!-- search button -->
+						<div class="widget-search">
+							<!-- <input class="search" type="text" placeholder="search" id ="search-field"> -->
+							<input class="search" type="text" id="search-field" onkeyup="myFunction()" title="Search by Train name" >
+							<button class="search-btn sort" type="button" data-sort="name"><i class="fa fa-search "></i></button>
+<!-- 							
+							$(".search-btn").on("click",function(){
+								var searchinput = $("#search-input").val()
+								
+							}) -->
+
+						</div>
+					</div>
+					<!-- /Search -->
+
+					<!-- Category -->
+					<div class="widget">
+						<h3 class="title">train status</h3>
+						<div class="widget-category">
+							
+							<a style="color:black" >Salida Express<span class="badge" style="background:green; color:white">Active</span></a>
+							<a style="color:black" >Slalom Express<span class="badge" style="background:red; color:white">Canceled</span></a>
+							<a style="color:black" >Union Bird<span class="badge" style="color:black; background:yellow">3 min Delayed</span></a>
+							<a style="color:black" >Gold Miners<span class="badge" style="background:green; color:white">Active</span></a>
+						</div>
+					</div>
+					<!-- /Category -->
+
+					<!-- Posts sidebar -->
+					<div class="widget">
+						
+							
+
+					</div>
+					<!-- /Posts sidebar -->
+
+					<!-- Tags -->
+					<div class="widget">
+						<h3 class="title">TOP Destinations</h3>
+						<div class="widget-tags">
+							<a >Salida</a>
+							<a >Winter Park</a>
+							<a >Steamboat</a>
+							<a >Denver</a>
+							<a >Boulder</a>
+						</div>
+					</div>
+					<!-- /Tags -->
+
+				</aside>
+				<!-- /Aside -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+
+
+	
+	<!-- /Blog -->
+
+	<!-- Footer -->
+	<footer id="footer" class="sm-padding bg-dark">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<div class="col-md-12">
+
+
+					<!-- footer copyright -->
+					<div class="footer-copyright">
+						<p>Copyright © 2018</p>
+					</div>
+					<!-- /footer copyright -->
+
+				</div>
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</footer>
+	<!-- /Footer -->
+
+	<!-- Back to top -->
+	<div id="back-to-top"></div>
+	<!-- /Back to top -->
+
+	<!-- Preloader -->
+	<div id="preloader">
+		<div class="preloader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<!-- /Preloader -->
+
+	<!-- jQuery Plugins -->
+	<!-- Jquery JS -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<!-- <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script> -->
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/bootstrap-notify.js"></script>
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script> -->
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.16/datatables.min.js"></script>
+
+</body>
+
+</html>

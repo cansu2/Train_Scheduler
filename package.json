@@ -1,0 +1,15 @@
+{
+  "name": "train-mobiledi",
+  "version": "1.0.0",
+  "description": "For more awesome website templates make sure to visit https://colorlib.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "list.js": "^1.5.0",
+    "require": "^2.4.20"
+  }
+}
