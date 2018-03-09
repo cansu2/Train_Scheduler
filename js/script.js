@@ -100,7 +100,7 @@ database.ref().on("child_added", function(childSnapshot) {
   console.log(train)
 
   if (min == 5){
-    $.notify(train + "is coming in 5 mins...", "info")
+    $.notify(train + " is coming in 5 mins...", "info")
   }
   
 
